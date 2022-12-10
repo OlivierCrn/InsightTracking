@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Location{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="weaponList">
+
+    {{ include('location/_form.html.twig') }}
+
+
+
+    <a class="btn btn-dark btn-custom w-100" href="{{ path('app_weapons_index') }}"> Retourner à l'index </a>
+    </div>
+</div>
+{% endblock %}

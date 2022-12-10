@@ -1,0 +1,70 @@
+body{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.weaponList{
+    margin: 5%;
+    padding: 10px 10px 20px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 8px 5px 15px 5px #000000;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+#weapons_table{
+    margin-bottom: 30px;
+}
+
+.btn-custom{
+    color: white;
+    padding: 5px;
+    width: 400px;
+    margin-bottom: 15px;
+}
+
+.odd{
+    background-color: #cbdde3 !important;
+}
+
+.bg-custom{
+    background-color: #11242B
+}
+
+nav{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.Title{
+    background-color: #cbdde3;
+    padding: 5px 10px;
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 5px #000000 ;
+    font-family: 'Kanit', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+a:visited{
+    text-decoration:none;
+    color:white;
+}
+
+.add{
+
+}

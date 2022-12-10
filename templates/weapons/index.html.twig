@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block title %}Weapons index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <div class="weaponList">
+            <div class="btn btn-dark">
+                <a href="{{ path('app_weapons_new') }}"> Nouvelle Arme </a>
+            </div>
+            <div class="btn btn-dark">
+                <a href="{{ path('app_location_new') }}"> Nouvelle location </a>
+            </div>
+            <table id="weapons_table" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Manquant</th>
+                    <th>Location</th>
+                    <th> Saison </th>
+                    <th>Type</th>
+                    <th>Crafté</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for weapon in weapons %}
+                    <tr>
+                        <td>{{ weapon.Name }}</td>
+                        <td>
+                            <span class="badge badge-pill bg-custom"> {{ weapon.UnlockAt -  weapon.InsightDrop }} </span>
+                        </td>
+                        <td>{{ weapon.LocationDrop.Name }}</td>
+                        <td>{{ weapon.LocationDrop.Season }}</td>
+                        <td>{{ weapon.Type.Name }}</td>
+                        <td>{{ weapon.Crafted ? 'Oui' : 'Non' }}</td>
+                        <td>
+                            <a class="btn btn-dark"
+                               href="{{ path('app_weapons_edit', {'id': weapon.id}) }}">Modifier</a>
+                            <a class="btn btn-dark" href="{{ path('app_weapons_addOne', {'id': weapon.id}) }}">
+                                Incrémenter </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="8">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#weapons_table').DataTable(
+                {
+                    paging: false,
+                    scrollY: '500px',
+                    scrollCollapse: true,
+                    info: false,
+                    "language": {
+                        "search": "Rechercher"
+                    }
+                }
+            );
+        })
+    </script>
+{% endblock %}
+
